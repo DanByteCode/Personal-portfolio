@@ -1,0 +1,14 @@
+---
+import { getIcon } from '@/utils/icons'
+import Icon from '@ui/icon.astro'
+const { list } = Astro.props
+---
+
+<div class="flex flex-row align-middle justify-center w-full gap-2">
+  {
+    list.map((t) => {
+      const icon = getIcon(t)
+      return <Icon iconInfo={icon} />
+    })
+  }
+</div>

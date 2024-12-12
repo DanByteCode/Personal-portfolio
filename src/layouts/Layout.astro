@@ -1,50 +1,122 @@
 ---
+import '@fontsource/barlow'
+import Background from '../components/ui/Background.astro'
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
+console.log(Astro.currentLocale)
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Porfolio: Danny Fernandez - Fullstack Web Developer"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Background />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    font-family: 'Barlow', sans-serif;
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+
+    --color4: #15252e;
+    --color1: #002742;
+    --color2: #1b435f;
+    --select: #004a80;
+    --select2: #00e1ff;
+    --color3: #f0f0f0;
+
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-image: linear-gradient(75deg, #050708, #0d243a, #030714);
+
+    background-size: 200%;
+    animation: gradient 24s ease-in-out;
+    animation-timeline: scroll();
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    background-repeat: repeat-y;
+    padding: 0;
+    margin: 0;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+  }
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  code {
+    font-family: Menlo, monospace;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  p {
+    margin-block: 8px;
+    max-width: 48ch;
+    text-wrap: pretty;
+  }
+  .social-icon > svg {
+    fill: #c5c5c5;
+    width: 24px;
+    transition: fill 0.4s;
+  }
+  .social-icon:hover > svg {
+    cursor: pointer;
+    fill: rgb(149, 225, 255);
+  }
 </style>

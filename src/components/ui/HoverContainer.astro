@@ -1,0 +1,51 @@
+---
+const { info = "Info", description = false } = Astro.props ?? {};
+---
+
+<div class="icon-containter">
+  <slot/>
+  <div class="tooltip">
+    <h4>{info}</h4>
+    {description &&
+        <hr />
+    <span class="text-sm">
+      {description}
+    </span>
+    }
+  </div>
+</div>
+<style>
+  .icon-containter {
+    position: relative;
+    transition: scale 0.2s;
+  }
+  .icon-containter:hover > img {
+    scale: 1.1;
+  }
+  hr{
+    border-color: rgb(35, 64, 92);
+  }
+  .icon-containter:hover > .tooltip {
+    visibility: visible;
+    transform: scale(1);
+  }
+  .tooltip {
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.8);
+    transform-origin: left top;
+     visibility: hidden;
+    position: absolute;
+    background-color: #000000d3;
+    width: max-content;
+    padding: 4px 8px;
+    border-radius: 5px;
+    top: 120%;
+    left: 0;
+    max-width: 360px;
+    z-index: 10;
+    pointer-events: none;
+    border: 1px solid rgb(0, 0, 110);
+    transition: transform 0.12s;
+  }
+</style>

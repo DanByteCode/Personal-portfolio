@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content'
+import Icon from './ui/icon.astro'
+import { getIcon } from '@/utils/icons'
+import IconCollection from './ui/IconCollection.astro'
+const projects = await getCollection('projects')
+export const prerender = true
+---
+
+<section id="projects">
+  <h2>PROYECTOS</h2>
+  <div id="content">
+    {
+      projects.map((p) => {
+        return (
+          <article>
+            <div class="flex gap-4">
+              <div class="flex flex-col justify-start">
+                <h3>{p.data.title}</h3>
+
+                <p>{p.body}</p>
+                <footer>
+                  <a class="link-button" href={p.data.code} target="_blank">
+                    ▣ Code
+                  </a>
+                  <a class="link-button" href={p.data.live} target="_blank">
+                    ▶ Live
+                  </a>
+                  <IconCollection list={p.data.tecnology} />
+                </footer>
+              </div>
+              <img
+                src={p.data.preview}
+                class="flex-1 object-contain max-w-60 hover:scale-105 transition-all border-blue-950 border-solid border-2"
+              />
+            </div>
+          </article>
+        )
+      })
+    }
+  </div>
+</section>
+<style>
+  #content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+  }
+  article {
+    height: 100%;
+    width: 100%;
+    max-width: 680px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 76, 139);
+    background-color: #00000067;
+    h3 {
+      font-size: x-large;
+    }
+    footer {
+      justify-self: end;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  .link-button {
+    color: var(--color3);
+    text-wrap: nowrap;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 4px 12px;
+    max-width: max-content;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid var(--color2);
+    border-radius: 12px;
+    transition:
+      box-shadow 0.4s,
+      border-color 0.2s;
+  }
+
+  span > svg {
+    fill: var(--color3);
+  }
+  .link-button:hover {
+    border-color: var(--select2);
+    color: var(--select2);
+    border-color: var(--select2);
+  }
+  .link-button:hover > span > svg {
+    fill: var(--select2);
+  }
+</style>

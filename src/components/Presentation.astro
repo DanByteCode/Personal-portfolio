@@ -1,0 +1,49 @@
+---
+import Github from './social-icons/Github.astro'
+import Linkedin from './social-icons/Linkedin.astro'
+import CV from './social-icons/CV.astro'
+import FullstackImg from './ui/FullstackImg.astro'
+import HoverContainer from './ui/HoverContainer.astro'
+---
+
+<section id="presentation">
+  <div
+    class="w-max min-h-40 text-container justify-between text-center flex flex-col gap-2"
+  >
+    <h1 tabindex="0" class="text-cyan-400">Danny Fernández</h1>
+    <h2>Desarrollador Web Fullstack</h2>
+    <footer class="w-full flex justify-center gap-8">
+      <HoverContainer info="Github"><Github /></HoverContainer>
+      <HoverContainer info="LinkedIn"><Linkedin /></HoverContainer>
+      <HoverContainer info="Curriculim Vitae"><CV /></HoverContainer>
+    </footer>
+  </div>
+  <div class="flex gap-8 items-center">
+    <FullstackImg />
+    <div class="w-full">
+      <p>
+        Buscando la resolución de proyectos que superen las espectativas
+        con gran atención al detalle.
+      </p>
+      <p>
+        Aplico el <b>Frontend</b> optimizado para el SEO, para una experíencia óptima
+        y accesible.
+      </p>
+      <p>
+        Desarrollo sistemas <b>Backend</b> eficientes, completos y escalables.
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+  .text-container {
+    padding-block: 28px;
+  }
+
+</style>

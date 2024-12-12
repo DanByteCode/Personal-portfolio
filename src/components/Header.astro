@@ -1,0 +1,57 @@
+<header>
+  <nav>
+    <a href="#presentation">Inicio</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#stack">Tecnologías</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+<style>
+  header {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: sticky;
+    width: fit-content;
+    top: 0;
+    padding-inline: 16px;
+    border-width: 0 3px 3px;
+    border-style: solid;
+    padding: 0;
+    border-radius: 0 0 8px 8px;
+    z-index: 3;
+    animation-name: header-bg;
+    animation-duration: 1ms;
+    animation: header-bg linear both;
+    animation-timeline: scroll(block);
+    animation-range: 0% 5%;
+  }
+
+  nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  a {
+    color: var(--color3);
+    border-radius: 0 0 4px 4px;
+    text-decoration: none;
+    font-weight: bolder;
+    padding:8px;
+  }
+
+  a:hover {
+    background-color: #1985b86b;
+  }
+
+  @keyframes header-bg {
+    from {
+      background-color: transparent;
+      border-color: #ff000000;
+    }
+    to {
+      background-color: #000000ab;
+      border-color: var(--color2);
+    }
+  }
+</style>

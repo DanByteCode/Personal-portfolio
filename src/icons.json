@@ -1,0 +1,82 @@
+[
+  {
+    "id": "astro",
+    "name": "Astro",
+    "description": "Framework para crear sitios Web optimizados."
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "description": "Lenguaje de estilos para la Web"
+  },
+  {
+    "id": "expressjs",
+    "name": "Express",
+    "description": "Framework para aplicaciones web en Node.js "
+  },
+  {
+    "id": "html",
+    "name": "HTML",
+    "description": "Lenguaje para estructurar contenido Web"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "description": "Lenguaje de Programación multiplataforma"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "description": "Base de datos no relacional"
+  },
+  {
+    "id": "nextjs",
+    "name": "NextJS",
+    "description": "Framework de React para crear aplicaciones web"
+  },
+  {
+    "id": "nodejs",
+    "name": "NodeJS",
+    "description": "Entorno de ejecución de JavaScript"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "description": "Base de datos Relacional"
+  },
+  {
+    "id": "react",
+    "name": "ReactJS",
+    "description": "Biblioteca para crear componentes interactivos"
+  },
+  {
+    "id": "sqlite",
+    "name": "SQLite",
+    "description": "Base de datos simplificada"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind",
+    "description": "Herramienta para aplicar estilos"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "description": "Superconjunto de JavaScript con tipado"
+  },
+  {
+    "id": "vitejs",
+    "name": "ViteJS",
+    "description": "Herramienta para crear proyectos en React"
+  },
+  {
+    "id": "react-router",
+    "name": "React Router",
+    "description": "Biblioteca para enrutar un sitio mediante SPA"
+  }
+  ,{
+    "id": "prisma",
+    "name": "Prisma",
+    "description": "ORM para bases de datos"
+  }
+]

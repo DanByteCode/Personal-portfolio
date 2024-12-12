@@ -1,0 +1,53 @@
+---
+import IconCollection from './ui/IconCollection.astro'
+import stack from '@/stack.json'
+const { framework, frontend, base, backend } = stack
+---
+
+<section id="stack">
+  <h2>Desarrollo Web Fullstack</h2>
+  <p>
+    Me especializo en entornos basados en JavaScript, enfocado en Web
+    Components.
+  </p>
+  <div class="stack-section">
+    <div class="stack-container">
+      <h4>Frameworks</h4>
+      <IconCollection list={framework} />
+    </div>
+    <div class="stack-container">
+      <h4>Base</h4>
+      <IconCollection list={base} />
+    </div>
+    <div class="stack-container">
+      <h4>Frontend</h4>
+      <IconCollection list={frontend} />
+    </div>
+    <div class="stack-container">
+      <h4>Backend</h4>
+      <IconCollection list={backend} />
+    </div>
+  </div>
+</section>
+<style>
+  .stack-section {
+    width: 100%;
+    max-width: 560px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  .stack-container {
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  gap: 8px;
+    background-color: rgba(0, 0, 0, 0.514);
+    border: black;
+    border: 1px solid rgb(7, 89, 143);
+    padding: 8px;
+    border-radius: 5px;
+  }
+</style>
