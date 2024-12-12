@@ -6,7 +6,7 @@ const { list } = Astro.props
 
 <div class="flex flex-row align-middle justify-center w-full gap-2">
   {
-    list.map((t) => {
+    list.map((t: string) => {
       const icon = getIcon(t)
       return <Icon iconInfo={icon} />
     })

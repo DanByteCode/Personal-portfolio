@@ -21,10 +21,11 @@ import Stack from '@/components/Stack.astro'
 <script>
   import { animate } from 'motion'
   const list = document.getElementsByClassName('copy-info')
-  Array.from(list).forEach((c) => {
-    c.addEventListener('click', () => {
-      const toCopy = c.dataset.info ?? ''
-      const check = c.getElementsByClassName('check')[0]
+  Array.from(list).forEach((ele) => {
+    const element = ele as HTMLElement
+    element.addEventListener('click', () => {
+      const toCopy = element.dataset.info ?? ''
+      const check = element.getElementsByClassName('check')[0]
       console.log(toCopy)
       animate(check, { pathLength: [0, 1] }, { duration: 0.4, ease: 'circIn' })
       const type = 'text/plain'
