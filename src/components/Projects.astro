@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import Icon from './ui/icon.astro'
 import { getIcon } from '@/utils/icons'
 import IconCollection from './ui/IconCollection.astro'
+import Image from 'astro/components/Image.astro'
 const projects = await getCollection('projects')
 export const prerender = true
 ---
@@ -29,7 +30,10 @@ export const prerender = true
                   <IconCollection list={p.data.tecnology} />
                 </footer>
               </div>
-              <img
+              <Image
+                width={240}
+                height={240}
+                alt={p.data.title}
                 src={p.data.preview}
                 class="flex-1 object-contain max-w-60 hover:scale-105 transition-all border-blue-950 border-solid border-2"
               />

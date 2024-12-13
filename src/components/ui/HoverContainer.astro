@@ -4,7 +4,7 @@ const { info = "Info", description = false } = Astro.props ?? {};
 
 <div class="icon-containter">
   <slot/>
-  <div class="tooltip">
+  <div class="tooltip" aria-hidden="true">
     <h4>{info}</h4>
     {description &&
         <hr />

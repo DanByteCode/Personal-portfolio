@@ -13,8 +13,9 @@ const { id, name, description } = Astro.props.iconInfo ?? {
     width="32"
     height="32"
     class="aspect-square"
+    loading="lazy"
   />
-  <div class="tooltip flex flex-col">
+  <div class="tooltip flex flex-col" aria-hidden="true"
     <h4>
       {name}
     </h4>
