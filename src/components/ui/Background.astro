@@ -44,7 +44,7 @@
 </svg>
 <script>
   const light = document.getElementById('direction')
-  document.addEventListener('scroll', (e) => {
+  document.addEventListener('scroll', () => {
     light?.setAttribute('x', calcLight())
   })
   function calcLight() {
