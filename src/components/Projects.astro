@@ -17,10 +17,10 @@ export const prerender = true
         return (
           <article>
             <div class="flex gap-4 items-center max-sm:flex-col-reverse">
-              <div class="flex flex-col justify-start">
+              <div class="flex flex-col gap-2 justify-start">
                 <h3>{p.data.title}</h3>
 
-                <p>{p.body}</p>
+                <p class="text-sm">{p.body}</p>
                 <footer class="flex items-center max-sm:flex-col-reverse">
                   <div class="flex justify-center gap-2">
                     <a class="link-button" href={p.data.code} target="_blank">
@@ -36,7 +36,7 @@ export const prerender = true
               <img
                 alt={p.data.title}
                 src={p.data.preview}
-                class="preview-image max-sm:max-w-full"
+                class="preview-image"
               />
             </div>
           </article>
@@ -105,10 +105,10 @@ export const prerender = true
     fill: var(--select2);
   }
   .preview-image {
-    aspect-ratio: 9/4;
+    aspect-ratio: 6/4;
     width: 100%;
-    max-width: 240px;
-    object-fit: scale-down;
+    max-width: 220px;
+    object-fit: contain;
     object-position: 50%;
     border: 1px solid var(--color2);
     background: rgba(0, 0, 0, 0.425);
@@ -117,8 +117,12 @@ export const prerender = true
       object-position 0.4s;
   }
   .preview-image:hover {
-    object-fit: cover;
-    object-position: 30%;
     scale: 1.04;
+  }
+  @media (max-width: 639px) {
+    .preview-image{
+      aspect-ratio: auto;
+      max-width: 100%;
+    }
   }
 </style>
