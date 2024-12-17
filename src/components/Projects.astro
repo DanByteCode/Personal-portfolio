@@ -1,38 +1,40 @@
 ---
 import { getCollection } from 'astro:content'
 import IconCollection from './ui/IconCollection.astro'
-const projects = await getCollection('projects')
+import type { Project } from '@/content/config'
+const projects: Project[] = await getCollection('projects')
 export const prerender = true
 ---
 
 <section id="projects">
   <h2>PROYECTOS</h2>
   <div id="content">
+    <p class="self-center">Mis trabajos mas destacados en cada tipo de entorno</p>
     {
       projects.map((p) => {
         return (
           <article>
-            <div class="flex gap-4">
+            <div class="flex gap-4 items-center max-sm:flex-col-reverse">
               <div class="flex flex-col justify-start">
                 <h3>{p.data.title}</h3>
 
                 <p>{p.body}</p>
-                <footer>
+                <footer class="flex items-center max-sm:flex-col-reverse">
+                  <div class="flex items-center">
                   <a class="link-button" href={p.data.code} target="_blank">
                     ▣ Code
                   </a>
                   <a class="link-button" href={p.data.live} target="_blank">
                     ▶ Live
                   </a>
+                  </div>
                   <IconCollection list={p.data.tecnology} />
                 </footer>
               </div>
               <img
-                width={240}
-                height={240}
                 alt={p.data.title}
                 src={p.data.preview}
-                class="flex-1 object-contain max-w-60 hover:scale-105 transition-all border-blue-950 border-solid border-2"
+                class="preview-image max-sm:max-w-full"
               />
             </div>
           </article>
@@ -58,7 +60,7 @@ export const prerender = true
     gap: 4px;
     border-radius: 8px;
     border: 2px solid rgb(0, 76, 139);
-    background-color: #00000067;
+    background-color: #00000038;
     h3 {
       font-size: x-large;
     }
@@ -100,5 +102,20 @@ export const prerender = true
   }
   .link-button:hover > span > svg {
     fill: var(--select2);
+  }
+  .preview-image{
+    aspect-ratio: 9/4;
+    width: 100%;
+    max-width: 260px;
+    object-fit: scale-down;
+    object-position: 50%;
+    border: 1px solid var(--color2);
+    background: rgba(0, 0, 0, 0.425);
+    transition: scale 0.2s, object-position 0.4s;
+  }
+  .preview-image:hover{
+    object-fit: cover;
+    object-position: 30%;
+    scale: 1.04;
   }
 </style>

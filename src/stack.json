@@ -1,6 +1,6 @@
 {
   "framework": ["nextjs", "vitejs", "astro"],
-  "frontend": ["react", "react-router", "html", "css", "tailwindcss"],
+  "frontend": ["react", "html", "css", "react-router", "tailwindcss"],
   "backend": ["expressjs", "postgresql", "mongodb", "prisma"],
-  "base": ["nodejs", "typescript", "javascript"]
+  "base": ["nodejs", "javascript", "typescript"]
 }
